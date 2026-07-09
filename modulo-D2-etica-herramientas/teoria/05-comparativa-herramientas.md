@@ -63,8 +63,17 @@ Si una herramienta te obliga a modelar todo con primitivas propietarias, el cost
 - `AGENTS.md` o `CLAUDE.md` son nombres distintos para una misma idea: **instrucciones persistentes del repositorio**
 - `Agent Teams`, subagentes u orquestadores internos son nombres distintos para **delegación controlada**
 - MCP es un intento de estandarizar la integración con herramientas externas
+- `SKILL.md` / Agent Skills es un intento de estandarizar **capacidades reutilizables** empaquetadas (instrucciones + scripts + recursos) que un agente puede cargar bajo demanda
 
 El principio correcto es: **prefiere conceptos y artefactos reutilizables por encima de features espectaculares pero totalmente propietarias**.
+
+### El caso SKILL.md: portabilidad de capacidades entre herramientas
+
+El estándar `SKILL.md` nació en Claude Code como formato para empaquetar una capacidad concreta (por ejemplo, "generar informes en un formato interno de la empresa" o "aplicar la guía de estilo de commits del equipo") en una carpeta con un fichero `SKILL.md` de instrucciones más, opcionalmente, scripts y recursos auxiliares. A diferencia de una integración MCP (que conecta con un sistema externo), una skill es más parecida a una "receta" autocontenida que el agente carga cuando la tarea la requiere.
+
+Lo relevante para la tesis de este módulo es que, igual que ocurrió con MCP, el formato ha empezado a ser soportado — con distinto grado de compatibilidad — por otras herramientas: Codex CLI, Gemini CLI, GitHub Copilot y Cursor han añadido o anunciado soporte parcial para cargar skills en el mismo formato o en formatos muy similares. No es (todavía) una portabilidad perfecta plug-and-play entre todas las herramientas, pero confirma la tendencia de fondo: **los artefactos que documentan capacidades y convenciones en Markdown estructurado tienden a volverse estándares de facto entre herramientas competidoras**, exactamente el patrón que ya viste con `AGENTS.md`/`CLAUDE.md` y con MCP.
+
+**Implicación práctica**: si inviertes tiempo en documentar una capacidad reutilizable de tu equipo como una skill, trátala como código — versiónala en el repositorio, no la ates a features exclusivas de un solo proveedor, y verifica periódicamente el nivel de soporte de tu herramienta principal y de las alternativas que tu equipo podría evaluar en el futuro.
 
 ### 5. Privacidad y despliegue
 

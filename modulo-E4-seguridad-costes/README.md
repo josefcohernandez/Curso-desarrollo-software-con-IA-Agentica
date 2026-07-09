@@ -15,7 +15,7 @@ Al completar este módulo serás capaz de:
 1. **Realizar** un threat model STRIDE asistido por IA, identificando amenazas sistemáticamente en cualquier arquitectura
 2. **Ejecutar** security code reviews profundos que van más allá del checklist genérico de OWASP, con prompts específicos por stack tecnológico
 3. **Calcular** el coste real de tokens (input, output, cached) y aplicar 6 estrategias de optimización para reducir el gasto sin sacrificar calidad
-4. **Seleccionar** el modelo correcto para cada tarea usando un framework de decisión de 5 preguntas
+4. **Seleccionar** el modelo correcto para cada tarea usando un framework de decisión de 5 preguntas basado en tiers (razonamiento/equilibrado/rápido), aplicable a Claude, GPT o Gemini
 5. **Configurar** effort levels y fallback models para maximizar la relación calidad/coste
 6. **Diseñar** un benchmark de productividad para tu equipo con métricas personales y de equipo
 7. **Medir** el ROI real de la adopción de IA agéntica en desarrollo de software
@@ -32,7 +32,7 @@ Al completar este módulo serás capaz de:
 | 1 | [01-threat-modeling.md](teoria/01-threat-modeling.md) | Threat modeling asistido por IA: STRIDE, análisis de dependencias, attack surface mapping | 15 min |
 | 2 | [02-security-review-profundo.md](teoria/02-security-review-profundo.md) | Security code review profundo: más allá de OWASP, vulnerabilidades por stack, prompt template | 15 min |
 | 3 | [03-token-budgeting.md](teoria/03-token-budgeting.md) | Token budgeting y gestión de costes: costes reales, 6 estrategias de optimización, presupuesto por tarea | 20 min |
-| 4 | [04-estrategias-modelo.md](teoria/04-estrategias-modelo.md) | Estrategias de selección de modelo: framework de 5 preguntas, fallback-model, effort levels | 15 min |
+| 4 | [04-estrategias-modelo.md](teoria/04-estrategias-modelo.md) | Estrategias de selección de modelo: framework de 5 preguntas por tiers (razonamiento/equilibrado/rápido), equivalencias entre Claude, GPT y Gemini, fallback-model, effort levels | 15 min |
 | 5 | [05-benchmarking-productividad.md](teoria/05-benchmarking-productividad.md) | Benchmarking de productividad: métricas personales y de equipo, proceso de 5 pasos | 15 min |
 | 6 | [06-seguridad-agentica.md](teoria/06-seguridad-agentica.md) | Seguridad agéntica: OWASP Top 10 for Agentic Applications, vectores MCP, principio de least agency | 20 min |
 
@@ -62,7 +62,8 @@ Al completar este módulo serás capaz de:
 - **Attack surface mapping**: identificación sistemática de todos los puntos de entrada de un sistema
 - **Token budgeting**: gestión consciente del consumo de tokens para controlar costes sin perder productividad
 - **Cached tokens**: tokens que se repiten entre llamadas (`AGENTS.md`, `CLAUDE.md`, system prompt) y tienen descuento del ~90%
-- **Effort levels**: niveles de razonamiento del modelo (low, medium, high, max) que afectan calidad, velocidad y coste
+- **Effort levels**: niveles de razonamiento del modelo (low, medium, high, max) que afectan calidad, velocidad y coste; el nombre del parámetro varía por proveedor (`effort` en Claude/Codex, `reasoning_effort` en OpenAI, `thinking budget` en Gemini)
+- **Tiers de modelo**: framework agnóstico de proveedor — tier de razonamiento, tier equilibrado y tier rápido — con Claude (Opus/Sonnet/Haiku), GPT y Gemini como ejemplos de implementación por proveedor
 - **Fallback model**: modelo de respaldo cuando el principal no está disponible, para degradación elegante
 - **Mutation score vs coverage**: el mutation score mide calidad real de tests; aquí aplicamos el mismo principio a security reviews
 - **OWASP Top 10 for Agentic Applications**: los 10 riesgos específicos de agentes autónomos publicados por OWASP en 2025/2026: goal hijacking, tool misuse, excessive agency, insecure output handling, privilege escalation, context poisoning, insecure multi-agent communication, cascading hallucination failures, insufficient logging y rogue agent behavior

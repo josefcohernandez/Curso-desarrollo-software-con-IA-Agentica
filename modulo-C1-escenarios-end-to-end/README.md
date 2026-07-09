@@ -18,7 +18,7 @@ Al completar este módulo serás capaz de:
 2. **Resolver** un incidente de producción de forma estructurada en menos de 30 minutos, combinando triage, diagnóstico, fix y validación
 3. **Arrancar** un proyecto greenfield desde una idea hasta un MVP funcional con especificación, arquitectura y tests
 4. **Abordar** código legacy de forma segura: primero entender, luego proteger con tests, después modificar
-5. **Organizar** una jornada de trabajo productiva con IA, alternando entre sesiones profundas y tareas ligeras sin perder contexto
+5. **Organizar** una jornada de trabajo productiva con IA, alternando entre sesiones profundas, tareas ligeras y tickets delegados a agentes cloud asíncronos, sin perder contexto
 6. **Decidir** qué workflow aplicar según el tipo de tarea, combinando las técnicas de los módulos A1-A4
 
 ---
@@ -33,7 +33,7 @@ Al completar este módulo serás capaz de:
 | 2 | [02-incidente-produccion.md](teoria/02-incidente-produccion.md) | Incidente en producción: workflow de triage, diagnóstico, fix y post-mortem bajo presión | 20 min |
 | 3 | [03-proyecto-greenfield.md](teoria/03-proyecto-greenfield.md) | Proyecto greenfield: de la idea al MVP con especificación, arquitectura y TDD | 20 min |
 | 4 | [04-codigo-legacy.md](teoria/04-codigo-legacy.md) | Trabajar con código legacy: tests primero, feature después, refactor opcional | 20 min |
-| 5 | [05-dia-tipico.md](teoria/05-dia-tipico.md) | El día típico de un desarrollador con IA: cronograma, patrones de éxito y gestión de fatiga | 15 min |
+| 5 | [05-dia-tipico.md](teoria/05-dia-tipico.md) | El día típico de un desarrollador con IA: cronograma, patrones de éxito, agentes cloud asíncronos (fire-and-forget) y gestión de fatiga | 20 min |
 
 ### Ejercicios Prácticos
 
@@ -65,6 +65,7 @@ Al completar este módulo serás capaz de:
 - **Tests-first en legacy**: nunca modificar código legacy sin antes tener una red de seguridad de tests que proteja el comportamiento existente
 - **Fatiga de supervisión**: límite cognitivo real al supervisar código generado por IA; máximo 2-3 sesiones profundas al día
 - **Higiene de contexto**: usar sesiones nuevas o limpieza de contexto entre tickets no relacionados para evitar degradación por contexto saturado
+- **Agentes cloud asíncronos (fire-and-forget)**: patrón complementario al trabajo interactivo (Devin, Google Jules, Codex cloud, GitHub Copilot coding agent) — asignar tarea vía issue, trabajo autónomo en sandbox aislado durante horas, entrega de PR para revisión humana igual de exigente que cualquier otro código generado por IA
 
 ---
 

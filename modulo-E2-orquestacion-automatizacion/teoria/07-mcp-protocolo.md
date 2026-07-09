@@ -278,13 +278,56 @@ Para encontrar servidores existentes: el repositorio oficial `modelcontextprotoc
 
 ---
 
+## A2A (Agent2Agent): El Protocolo Complementario para Comunicación Entre Agentes
+
+MCP resuelve cómo un agente habla con herramientas y datos. No resuelve cómo un agente habla con **otro agente** — dos agentes autónomos, potencialmente de organizaciones distintas, que necesitan coordinarse, delegarse tareas y devolverse resultados sin compartir el mismo proceso ni el mismo host. Ese es el problema que resuelve **A2A (Agent2Agent Protocol)**.
+
+### Origen y estado en 2026
+
+A2A fue creado por Google y anunciado en abril de 2025. A diferencia de MCP, que nació y se mantiene bajo el paraguas de Anthropic, A2A se donó a la **Linux Foundation** para garantizar gobernanza neutral y evitar que quedara ligado a un único vendor. Alcanzó la versión **1.0** en 2026, con más de **150 organizaciones** reportando implementaciones en producción, incluyendo AWS, Microsoft, Salesforce, SAP, IBM y ServiceNow — es decir, no es un protocolo experimental, sino una pieza de infraestructura ya adoptada por el ecosistema enterprise.
+
+### El concepto central: Agent Cards
+
+A2A introduce las **Agent Cards**: documentos firmados digitalmente que describen las capacidades, endpoints y requisitos de autenticación de un agente, de forma análoga a como un `openapi.yaml` describe una API REST. Un agente orquestador puede descubrir la Agent Card de otro agente, verificar su firma, y decidir si delegarle una tarea basándose en las capacidades declaradas — sin necesitar conocer la implementación interna de ese agente.
+
+```json
+{
+  "name": "agente-facturacion",
+  "description": "Procesa facturas y genera reportes de conciliación contable",
+  "capabilities": ["generar_factura", "conciliar_pagos", "exportar_reporte"],
+  "endpoint": "https://agentes.miempresa.com/facturacion",
+  "auth": {
+    "type": "oauth2",
+    "tokenUrl": "https://auth.miempresa.com/token"
+  },
+  "signature": "..."
+}
+```
+
+### MCP vs. A2A: relación complementaria, no competencia
+
+La forma más clara de entender la diferencia:
+
+| Protocolo | Conecta | Analogía | Pregunta que responde |
+|-----------|---------|----------|------------------------|
+| **MCP** | Agente ↔ Herramienta/Dato | USB / HTTP para herramientas | "¿Cómo uso esta base de datos, este ticket tracker, este servicio?" |
+| **A2A** | Agente ↔ Agente | HTTP para agentes autónomos | "¿Cómo delego esta tarea a otro agente que no controlo directamente?" |
+
+Un mismo sistema puede usar ambos a la vez: un agente orquestador usa **A2A** para delegar una subtarea a un agente especializado de otro equipo o proveedor, y ese agente especializado usa **MCP** para acceder a las herramientas y datos que necesita para completar la subtarea. No son alternativas — son capas distintas de la misma pila de infraestructura agéntica.
+
+### La Agentic AI Foundation (AAIF)
+
+En diciembre de 2025, OpenAI, Anthropic, Google, Microsoft, AWS y Block lanzaron conjuntamente la **Agentic AI Foundation (AAIF)**, una fundación neutral cuyo propósito es evitar la fragmentación del ecosistema de protocolos de agentes. MCP y A2A operan bajo este paraguas como los dos protocolos de referencia: MCP para la capa de integración de herramientas, A2A para la capa de coordinación entre agentes. Que competidores directos en el mercado de modelos y agentes converjan en gobernanza compartida de estos dos protocolos es la señal más fuerte de que ambos se han consolidado como estándares de facto, no como apuestas de un único vendor.
+
+**Implicación práctica para tu trabajo**: si hoy desarrollas un servidor MCP para tu sistema interno, esa inversión es independiente y complementaria a cualquier futura necesidad de exponer uno de tus agentes como servicio consumible por otros agentes vía A2A. No necesitas elegir entre ambos protocolos — la pregunta correcta es "¿estoy conectando un agente con una herramienta (MCP) o un agente con otro agente (A2A)?".
+
+---
+
 ## Roadmap MCP en 2026
 
-MCP es un protocolo en evolución activa. Las áreas de desarrollo para 2026:
+MCP sigue en evolución activa más allá de A2A. Las áreas de desarrollo que continúan en marcha:
 
 **Transport scalability**: la transición de SSE a Streamable HTTP como transporte estándar para servidores remotos, con mejor soporte para conexiones intermitentes y mayor eficiencia en redes corporativas con proxies.
-
-**Agent-to-agent communication**: extensiones del protocolo para que un servidor MCP pueda actuar también como cliente de otro servidor MCP. Esto habilita arquitecturas donde un agente orquestador delega a sub-agentes a través de MCP, unificando la infraestructura de orquestación con la de integración de herramientas.
 
 **Enterprise governance**: controles de auditoría y políticas centralizadas que permiten a las organizaciones definir qué servidores MCP pueden usar los desarrolladores, con logging de todas las invocaciones de tools para compliance.
 
@@ -392,7 +435,7 @@ El agente ahora puede hacer queries SQL directamente desde Claude Code. El resou
 
 ## Resumen
 
-MCP estandariza cómo los agentes de IA se conectan con herramientas y datos externos. Desarrollar un servidor MCP es desarrollar una integración universal: funciona en Claude Code, Cursor, Copilot y cualquier cliente compatible.
+MCP estandariza cómo los agentes de IA se conectan con herramientas y datos externos. Desarrollar un servidor MCP es desarrollar una integración universal: funciona en Claude Code, Cursor, Copilot y cualquier cliente compatible. **A2A** complementa a MCP estandarizando cómo un agente delega tareas a otro agente autónomo — juntos, bajo la gobernanza de la Agentic AI Foundation, forman las dos capas de referencia de la infraestructura agéntica en 2026.
 
 ### Las tres primitivas
 

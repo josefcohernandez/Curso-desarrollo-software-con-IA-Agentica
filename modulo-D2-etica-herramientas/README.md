@@ -8,7 +8,7 @@ Este módulo te da un marco práctico para responder estas preguntas. No es un c
 
 > **Nota de lectura**: la parte de panorama de herramientas debe leerse como una foto de mercado. Úsala para comparar categorías, criterios y trade-offs, pero verifica siempre las características, precios y políticas actuales antes de decidir.
 
-**Tiempo estimado: 2 horas**
+**Tiempo estimado: 2 horas 30 minutos**
 
 ---
 
@@ -18,7 +18,7 @@ Al completar este módulo serás capaz de:
 
 1. **Entender** el estado actual de la propiedad intelectual sobre código generado por IA y aplicar una regla práctica para tu trabajo
 2. **Evaluar** los riesgos de privacidad según el contexto (open source, startup, enterprise regulada) y aplicar mitigaciones adecuadas
-3. **Identificar** los requisitos de compliance relevantes para tu sector (GDPR, SOC 2, PCI-DSS, HIPAA)
+3. **Identificar** los requisitos de compliance relevantes para tu sector (GDPR, SOC 2, PCI-DSS, HIPAA, Cyber Resilience Act)
 4. **Aplicar** prácticas de responsible disclosure cuando el agente encuentra o introduce vulnerabilidades
 5. **Comparar** las principales herramientas de desarrollo con IA usando criterios objetivos y seleccionar la adecuada para tu contexto
 6. **Distinguir** tendencias claras en el futuro del desarrollo con IA de lo que probablemente no cambiará
@@ -33,9 +33,9 @@ Al completar este módulo serás capaz de:
 |---|---------|------|-----------------|
 | 1 | [01-propiedad-intelectual.md](teoria/01-propiedad-intelectual.md) | Propiedad intelectual y copyright de código generado por IA: estado legal, implicaciones y regla práctica | 15 min |
 | 2 | [02-privacidad-datos.md](teoria/02-privacidad-datos.md) | Privacidad y protección de datos: qué envías, riesgos por contexto, mejores prácticas | 15 min |
-| 3 | [03-compliance-regulacion.md](teoria/03-compliance-regulacion.md) | Compliance y sectores regulados: GDPR, SOC 2, PCI-DSS, HIPAA y controles recomendados | 15 min |
+| 3 | [03-compliance-regulacion.md](teoria/03-compliance-regulacion.md) | Compliance y sectores regulados: GDPR, SOC 2, PCI-DSS, HIPAA, Cyber Resilience Act (CRA), NIST AI RMF y controles recomendados | 20 min |
 | 4 | [04-responsible-disclosure.md](teoria/04-responsible-disclosure.md) | Responsible disclosure y seguridad: cuando el agente encuentra o introduce vulnerabilidades | 10 min |
-| 5 | [05-comparativa-herramientas.md](teoria/05-comparativa-herramientas.md) | Comparativa objetiva de herramientas: Claude Code, Cursor, Copilot, Windsurf, Cline | 15 min |
+| 5 | [05-comparativa-herramientas.md](teoria/05-comparativa-herramientas.md) | Comparativa objetiva de herramientas: Claude Code, Cursor, Copilot, Windsurf, Cline, y la portabilidad emergente de SKILL.md / Agent Skills | 20 min |
 | 6 | [06-futuro-desarrollo-ia.md](teoria/06-futuro-desarrollo-ia.md) | El futuro del desarrollo con IA: tendencias claras (MCP, computer use, agentic RAG, agentes autónomos) y lo que no cambiará | 15 min |
 
 ### Ejercicios Prácticos
@@ -62,8 +62,10 @@ Al completar este módulo serás capaz de:
 - **Propiedad intelectual**: los ToS del proveedor, la copyrightabilidad del output y el riesgo de reproducción no son lo mismo; hay que distinguirlos
 - **Privacidad por contexto**: el riesgo varía de bajo (open source) a muy alto (gobierno/defensa), y la mitigación debe corresponderse
 - **Compliance**: GDPR, SOC 2, PCI-DSS e HIPAA tienen implicaciones específicas para el uso de IA en desarrollo
+- **Cyber Resilience Act (CRA)**: regula el producto final, no el proceso — el fabricante responde por la ciberseguridad del código independientemente de si lo escribió una persona o un agente; exige trazabilidad de qué código fue generado o influenciado por IA
 - **Responsible disclosure**: protocolo diferente cuando el agente encuentra una vulnerabilidad vs. cuando la introduce
 - **No hay herramienta perfecta**: cada herramienta tiene fortalezas y debilidades; la elección depende de tu contexto
+- **SKILL.md / Agent Skills**: estándar de portabilidad nacido en Claude Code para empaquetar capacidades reutilizables, con soporte creciente en Codex CLI, Gemini CLI, Copilot y Cursor
 - **Lo que no cambia**: pensamiento crítico, buenas specs, tests, y la responsabilidad del desarrollador sobre su código
 - **Computer use**: agentes que interactúan con interfaces gráficas; la disponibilidad y el nivel de autonomía varían por proveedor y fecha
 - **Agentic RAG**: agentes que gestionan su propia búsqueda de conocimiento de forma iterativa e inteligente

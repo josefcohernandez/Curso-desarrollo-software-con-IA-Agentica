@@ -109,6 +109,57 @@ La **fatiga de supervisión de IA** es real. Después de supervisar activamente 
 
 ---
 
+## Complemento al día interactivo: agentes cloud asíncronos (fire-and-forget)
+
+Todo lo descrito hasta ahora asume un patrón **interactivo y síncrono**: tú estás delante de la sesión, supervisando cada paso, disponible para responder preguntas del agente. Desde 2025-2026, un patrón complementario ha ganado tracción real en el día a día de equipos profesionales: los **agentes cloud asíncronos**, también llamados fire-and-forget porque asignas la tarea y te desentiendes hasta que el agente entrega un resultado.
+
+Ejemplos representativos de esta categoría: **Devin**, **Google Jules**, **Codex cloud** (el modo de ejecución en la nube de OpenAI Codex, distinto del CLI interactivo) y el **coding agent de GitHub Copilot** que trabaja directamente sobre issues.
+
+### El flujo fire-and-forget
+
+```text
+1. Asignar la tarea (2-5 min de tu tiempo)
+   → Escribes o seleccionas un issue/ticket con contexto suficiente
+   → Asignas el issue al agente cloud (mención, label o comando específico
+     de la plataforma)
+   → El agente confirma que ha entendido el alcance (a veces con preguntas
+     de clarificación antes de empezar)
+
+2. Trabajo autónomo en sandbox aislado (minutos a varias horas)
+   → El agente clona el repositorio en un entorno aislado (sandbox),
+     no en tu máquina ni en la de nadie del equipo
+   → Explora el codebase, planifica el cambio, implementa, ejecuta tests
+   → No hay supervisión humana durante esta fase — es la diferencia
+     fundamental con las sesiones interactivas de este capítulo
+   → Tú sigues con otro trabajo: sesiones profundas, tareas ligeras,
+     reuniones, u otro agente cloud en paralelo sobre otro ticket
+
+3. Entrega de PR para revisión humana (tu tiempo de vuelta)
+   → El agente abre un PR con descripción del cambio, cómo lo verificó,
+     y (idealmente) enlace a los logs de su propio proceso de trabajo
+   → El PR se revisa exactamente igual que cualquier otro PR generado
+     por IA — todo lo aprendido en el Módulo A3 aplica sin excepciones
+   → Si el resultado no es satisfactorio, puedes pedir iteración
+     (comentario en el PR) o descartar y reformular la tarea
+```
+
+### Cuándo usar el patrón asíncrono vs. el interactivo
+
+| Usa agente cloud asíncrono cuando... | Usa sesión interactiva cuando... |
+|----------------------------------------|-------------------------------------|
+| La tarea está bien acotada y descrita (un ticket claro, no una exploración abierta) | La tarea requiere decisiones de diseño en tiempo real que tú quieres tomar |
+| Puedes permitirte esperar horas por el resultado sin bloquear tu trabajo | Necesitas el resultado en minutos |
+| Quieres paralelizar: varios tickets trabajándose a la vez en sandboxes distintos | Solo puedes (o quieres) supervisar una cosa a la vez |
+| El riesgo del cambio es bajo-medio (features acotadas, fixes bien definidos, tareas de mantenimiento) | El cambio toca código crítico donde prefieres supervisión paso a paso |
+
+### Por qué complementa, no sustituye, el trabajo interactivo
+
+El patrón asíncrono no reduce el rigor de revisión — lo desplaza en el tiempo. La ausencia de supervisión durante la ejecución hace que la revisión del PR final sea, si acaso, **más** exigente que en una sesión interactiva donde ya has visto los diffs intermedios. Trata cada PR de un agente cloud como si viniera de un colaborador remoto al que nunca has visto trabajar: confías en el resultado solo después de verificarlo, no antes.
+
+**Patrón de uso realista en la jornada**: muchos equipos combinan ambos patrones en el mismo día — por ejemplo, asignan 2-3 tickets de mantenimiento o deuda técnica a un agente cloud a primera hora de la mañana (patrón fire-and-forget), mientras dedican sus sesiones interactivas profundas a la feature más compleja del sprint. A media tarde, revisan los PRs que el agente cloud entregó mientras trabajaban en otra cosa.
+
+---
+
 ## Gestión del contexto a lo largo del día
 
 | Momento | Acción de contexto |

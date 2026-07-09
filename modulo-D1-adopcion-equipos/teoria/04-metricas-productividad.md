@@ -91,6 +91,55 @@ Un survey breve (3-5 preguntas, escala 1-10) cada 2-4 semanas:
 
 ---
 
+## Frameworks de Referencia del Sector
+
+Las 6 métricas de este capítulo son un punto de partida pragmático, pero no las inventamos en el vacío — conviene conocer los frameworks estándar de la industria para no reinventar peor lo que ya existe, y para poder hablar el mismo idioma que otros equipos de ingeniería:
+
+| Framework | Qué mide | Relación con las métricas de este módulo |
+|-----------|----------|---------------------------------------------|
+| **DORA (DevOps Research and Assessment)** | 4 métricas clave de rendimiento de entrega de software: deployment frequency, lead time for changes, change failure rate, time to restore service | El "cycle time" de este módulo es una variante simplificada del "lead time for changes" de DORA |
+| **SPACE** | Framework multidimensional (Satisfaction, Performance, Activity, Communication, Efficiency) que explícitamente advierte contra medir productividad con una sola métrica | La combinación de "satisfacción del equipo" + métricas de throughput de este módulo sigue el espíritu de SPACE: nunca una métrica sola |
+| **DX Core 4** | Framework de DX (la organización, no la sigla genérica) que combina velocidad, calidad, impacto de negocio y satisfacción del desarrollador en un cuadro de mando único | Equivalente en espíritu al dashboard recomendado más abajo, pero con validación a mayor escala en organizaciones enterprise |
+
+**Recomendación práctica**: usa las 6 métricas de este capítulo para arrancar rápido, pero si tu organización ya usa DORA, SPACE o DX Core 4 para medir ingeniería en general, integra el impacto de la IA dentro de esos frameworks existentes en lugar de crear un sistema de medición paralelo. Tener dos sistemas de métricas que no se hablan entre sí genera más confusión que valor.
+
+### El informe DORA "ROI of AI-Assisted Software Development" (2026)
+
+El informe DORA de 2026 centrado específicamente en el ROI del desarrollo asistido por IA es, a fecha de este capítulo, una de las referencias más citadas del sector sobre este tema — trátalo como una tendencia reportada por una organización de referencia, no como una auditoría formal e independiente de tu propio contexto. Su conclusión central es incómoda pero importante: **la adopción de IA por sí sola no predice mejores resultados de entrega** — lo que predice mejores resultados es la combinación de adopción de IA con prácticas de ingeniería sólidas ya existentes (trunk-based development, feedback rápido, automatización de despliegue). En equipos con prácticas débiles, la IA amplifica el caos existente en lugar de corregirlo.
+
+**Implicación práctica**: si tu equipo tiene problemas de calidad o de proceso antes de adoptar IA, esos problemas no desaparecen con la IA — normalmente empeoran, porque el volumen de cambios aumenta sin que la capacidad de absorberlos con calidad haya mejorado.
+
+---
+
+## La Paradoja de la Productividad con IA
+
+### Más código y más PRs no es más valor entregado
+
+Es tentador interpretar "más PRs por semana" y "más líneas de código generadas" como señales inequívocas de productividad. La evidencia de 2026 dice lo contrario en muchos contextos: son señales de **actividad**, no necesariamente de **valor entregado**. Este es el fenómeno que el sector empieza a llamar la **AI Productivity Paradox** (paradoja de la productividad con IA).
+
+Dos datos concretos que ilustran la paradoja (cifras aproximadas reportadas por terceros a mediados de 2026, no auditorías formales — úsalas como orden de magnitud, no como estadística exacta):
+
+| Dato | Fuente orientativa | Qué implica |
+|------|---------------------|--------------|
+| El **code churn** (código reescrito o revertido poco después de escribirse) se duplica en equipos con adopción intensiva de IA | Informe DORA 2026 | Parte del código generado no es una entrega estable — es trabajo que se deshace o rehace poco después |
+| Los agentes de código escriben **~180% más código**, pero solo **~30% más software llega a producción** | Investigación MIT, cobertura de Forbes (2026) | Hay una desconexión creciente entre volumen de código generado y volumen de funcionalidad real que llega a los usuarios |
+
+### Por qué ocurre
+
+1. **El código se genera más rápido de lo que se revisa**: si la capacidad de code review no escala al mismo ritmo que la generación de código, el cuello de botella simplemente se mueve — de "escribir código" a "revisar y aprobar código" — y ese cuello de botella no siempre es visible en las métricas de throughput
+2. **PRs más grandes o más numerosos no implican features terminadas**: un PR puede estar "mergeado" y no estar realmente terminado (falta configuración, falta testing en staging, falta el trabajo de integración)
+3. **El código generado que no se usa sigue contando en las métricas de actividad**: líneas generadas, commits, PRs abiertos — ninguna de estas métricas distingue entre código que aporta valor y código que se descarta o queda sin desplegar
+
+### Cómo protegerte de la paradoja en tu propio dashboard
+
+- **No confíes solo en throughput** (PRs/semana, líneas generadas): complementa siempre con una métrica de resultado, no solo de actividad — funcionalidad efectivamente desplegada, tickets de negocio cerrados, o `deployment frequency` de DORA
+- **Vigila el code churn**: si el porcentaje de código que se reescribe o revierte en las 2-4 semanas posteriores a su creación sube de forma sostenida, es una señal de que la velocidad aparente no se está traduciendo en trabajo estable
+- **Diferencia "PR mergeado" de "feature en producción usada por usuarios reales"**: son eventos distintos y solo el segundo es la definición real de productividad
+
+> **La pregunta que sustituye a "¿cuánto código generamos?"**: "¿cuánto de lo que generamos llega a producción y se queda ahí sin necesitar reescritura inmediata?"
+
+---
+
 ## Dashboard Recomendado
 
 Si quieres un dashboard visual para el equipo, estas son las métricas a incluir:

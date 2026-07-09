@@ -4,9 +4,9 @@
 
 SDD es la metodología que separa a los desarrolladores que usan IA de los que **dominan** el desarrollo con IA. Mientras otros acumulan horas de retrabajo porque el agente "interpretó mal lo que querían", quienes practican SDD tienen especificaciones que eliminan la ambigüedad antes de escribir la primera línea de código.
 
-Este módulo monográfico profundiza en las cuatro fases de SDD — entrevista, especificación, implementación y verificación — con nivel de detalle suficiente para aplicarlas en proyectos reales: desde APIs greenfield hasta features en codebases legacy con 200K líneas. Incluye tres casos de estudio end-to-end y ejercicios que simulan los retos reales del trabajo diario.
+Este módulo monográfico profundiza en las cuatro fases de SDD — entrevista, especificación, implementación y verificación — con nivel de detalle suficiente para aplicarlas en proyectos reales: desde APIs greenfield hasta features en codebases legacy con 200K líneas. Incluye tres casos de estudio end-to-end, un panorama de implementaciones concretas (GitHub Spec Kit, AWS Kiro, Tessl, BMAD-METHOD) y ejercicios que simulan los retos reales del trabajo diario.
 
-**Tiempo estimado: 3 horas 30 minutos**
+**Tiempo estimado: 3 horas 45 minutos**
 
 ---
 
@@ -21,6 +21,7 @@ Al completar este módulo serás capaz de:
 5. **Verificar** la implementación cruzándola contra la spec, generando un VERIFICACION.md con clasificación CUMPLIDO / PARCIAL / NO IMPLEMENTADO
 6. **Adaptar** SDD a diferentes contextos: proyectos greenfield, código legacy, APIs y features de frontend
 7. **Reconocer** cuándo SDD es la herramienta correcta y cuándo es excesiva para la tarea en mano
+8. **Ubicar** implementaciones concretas de SDD (GitHub Spec Kit, AWS Kiro, Tessl, BMAD-METHOD) como aplicaciones de la misma filosofía, no como metodologías alternativas
 
 ---
 
@@ -35,11 +36,11 @@ Al completar este módulo serás capaz de:
 
 ## Duración Estimada
 
-**3 horas 30 minutos** desglosadas:
+**3 horas 45 minutos** desglosadas:
 
 | Bloque | Contenido | Tiempo |
 |--------|-----------|--------|
-| Teoría | 7 ficheros de teoría | 90 min |
+| Teoría | 8 ficheros de teoría | 105 min |
 | Ejercicios | 4 ejercicios prácticos | 90 min |
 | Plantillas | Uso y personalización | 30 min |
 
@@ -58,6 +59,7 @@ Al completar este módulo serás capaz de:
 | 5 | [05-fase-verificacion.md](teoria/05-fase-verificacion.md) | Fase 4 — Verificación: Writer/Reviewer, VERIFICACION.md, gestión de gaps | 10 min |
 | 6 | [06-sdd-en-contexto.md](teoria/06-sdd-en-contexto.md) | SDD aplicado: greenfield, legacy, APIs, frontend, microservicios — y cuándo no usarlo | 15 min |
 | 7 | [07-casos-estudio.md](teoria/07-casos-estudio.md) | 3 casos de estudio end-to-end: API, feature en legacy y refactoring de autenticación | 10 min |
+| 8 | [08-herramientas-sdd.md](teoria/08-herramientas-sdd.md) | Implementaciones concretas de SDD: GitHub Spec Kit, AWS Kiro, Tessl y BMAD-METHOD | 15 min |
 
 ### Ejercicios Prácticos
 
@@ -87,12 +89,13 @@ Al completar este módulo serás capaz de:
 - **Writer/Reviewer**: patrón de verificación donde una sesión diferente (sin contexto de implementación) revisa el código contra la spec
 - **VERIFICACION.md**: artefacto formal que documenta el estado de cada requisito: CUMPLIDO, PARCIAL o NO IMPLEMENTADO, con evidencia y plan de corrección
 - **Triple stack**: combinación SDD + Gherkin + TDD — la metodología más robusta para desarrollo profesional con IA agéntica
+- **Implementaciones concretas de SDD**: GitHub Spec Kit (open source, portable, ~30 agentes soportados), AWS Kiro (IDE spec-native), Tessl (spec como fuente de verdad versionada) y BMAD-METHOD (roles fijos inspirados en equipos de producto) — todas aplican la misma filosofía enseñada en este módulo
 
 ---
 
 ## Flujo de trabajo recomendado
 
-1. **Lee los 7 ficheros de teoría en orden**: la filosofía (01) contextualiza todo lo demás; las fases (02-05) son el núcleo; el contexto (06) y los casos de estudio (07) te preparan para los ejercicios
+1. **Lee los 8 ficheros de teoría en orden**: la filosofía (01) contextualiza todo lo demás; las fases (02-05) son el núcleo; el contexto (06), los casos de estudio (07) y el panorama de herramientas (08) te preparan para los ejercicios y para evaluar implementaciones concretas de SDD
 2. **Descarga las plantillas**: ten `plantilla-spec.md` y `plantilla-verificacion.md` abiertas mientras haces los ejercicios
 3. **Haz el ejercicio 01**: crear una spec desde cero es la habilidad más fundamental — aquí practican la entrevista y la redacción de spec
 4. **Haz el ejercicio 03** (ciclo completo): es el ejercicio más representativo del trabajo real — las 4 fases de SDD de principio a fin

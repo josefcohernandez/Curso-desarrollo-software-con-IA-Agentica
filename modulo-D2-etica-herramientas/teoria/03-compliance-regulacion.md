@@ -141,6 +141,12 @@ Si desarrollas software safety-critical (sistemas de control de vehículos, avia
 - [ ] BAA firmado con el proveedor (o uso sin PHI)
 - [ ] Datos sintéticos para desarrollo y test
 - [ ] Audit trail del uso de IA en código PHI
+
+### CRA (productos con software conectado)
+- [ ] Metadatos de commit que registran asistencia de IA en cambios significativos
+- [ ] SBOM actualizado con dependencias introducidas por agentes
+- [ ] Code review humano obligatorio para componentes críticos
+- [ ] Proceso de notificación de incidentes de seguridad activo
 ```
 
 ---
@@ -186,6 +192,68 @@ Para la mayoría de los equipos de desarrollo, el EU AI Act **no cambia drástic
 - Documentar el uso de herramientas de IA en el proceso de desarrollo
 - Mantener trazabilidad del código generado por IA vs. escrito manualmente
 - Consultar con el equipo legal para determinar obligaciones específicas
+
+> **Fecha clave**: el 2 de agosto de 2026 entra en aplicación plena una parte importante del régimen operativo del AI Act para sistemas y proveedores. Si tu organización aún no ha hecho la evaluación de clasificación de riesgo, este es el momento de priorizarla.
+
+---
+
+## Cyber Resilience Act (CRA)
+
+### Qué es y por qué es diferente al AI Act
+
+El **Cyber Resilience Act (CRA)** es el reglamento europeo de ciberseguridad para productos con elementos digitales (software y hardware conectado). A diferencia del AI Act, que regula sistemas de IA, el CRA regula **el producto final que pones en el mercado**, sin importar cómo se construyó. Esto lo hace la pieza regulatoria más directamente ligada a "código generado por IA en producción": el CRA no pregunta si usaste un agente para escribir el código, pregunta si el producto que vendes es seguro y quién responde por ello.
+
+El CRA entró en vigor en 2024 con una aplicación escalonada; las obligaciones de notificación de incidentes y las obligaciones sustantivas completas se despliegan en 2026 y 2027 respectivamente. Aplica a cualquier fabricante que ponga en el mercado de la UE productos de software con conexión a red, directa o indirecta.
+
+### La responsabilidad del "fabricante" no cambia si el código lo escribió un agente
+
+El principio central del CRA es simple y contundente: **el fabricante es responsable de la ciberseguridad del producto durante todo su ciclo de vida, independientemente de qué herramienta o proceso se usó para construirlo**. Si tu equipo usa Claude Code, Codex, Cursor o cualquier otro agente para generar parte o la totalidad del código, la responsabilidad legal sigue siendo de tu organización como fabricante — no del proveedor del modelo, ni del agente, ni de un "el código lo escribió la IA" como defensa.
+
+| Pregunta habitual | Respuesta bajo el CRA |
+|--------------------|------------------------|
+| "¿La IA es responsable si el código generado tiene una vulnerabilidad explotada?" | No. El fabricante (tu empresa) es responsable, igual que si el código lo hubiera escrito una persona |
+| "¿El CRA aplica solo a código escrito manualmente?" | No. Aplica al producto final, sin distinción del proceso de desarrollo |
+| "¿Usar IA reduce mis obligaciones de seguridad?" | No. Si acaso, las aumenta: debes poder demostrar debida diligencia sobre el código generado por IA |
+
+### Trazabilidad: qué código fue generado o influenciado por IA
+
+El CRA exige documentación técnica y procesos de gestión de vulnerabilidades a lo largo del ciclo de vida del producto. En la práctica, esto empuja a los equipos que usan IA agéntica hacia una trazabilidad más rigurosa de qué partes del código fueron generadas o influenciadas por un agente:
+
+| Práctica de trazabilidad | Cómo implementarla |
+|---------------------------|---------------------|
+| **Metadatos de commit** | Incluir en el mensaje de commit o en trailers estructurados si el cambio fue generado por IA, con qué herramienta y bajo qué revisión humana (ej: `Co-authored-by: Claude <noreply@anthropic.com>` o un trailer propio `AI-Assisted: true`) |
+| **Atribución de modelo** | Registrar qué modelo y versión generó código crítico (autenticación, criptografía, gestión de sesiones), útil si aparece una vulnerabilidad de clase conocida en ese modelo |
+| **SBOM (Software Bill of Materials)** | El CRA refuerza la exigencia de SBOM; en un contexto de IA agéntica, esto incluye las dependencias que el agente introdujo, no solo las que el humano añadió deliberadamente |
+| **Registro de revisión humana** | Documentar que el código generado por IA en componentes críticos pasó por code review humano, no solo por tests automáticos |
+
+**Regla práctica**: no necesitas etiquetar cada línea de código como "IA" o "humano" — eso es inviable y poco útil. Sí necesitas poder responder, ante una auditoría o un incidente, "¿qué proceso de revisión pasó este componente antes de producción?" y "¿qué modelo/herramienta participó en generarlo?" para componentes de alto riesgo (auth, pagos, gestión de datos sensibles).
+
+### Checklist de preparación CRA
+
+```markdown
+## Preparación CRA — Uso de IA en Desarrollo
+
+- [ ] Política de commits que registra asistencia de IA en cambios significativos
+- [ ] SBOM actualizado que incluye dependencias introducidas por agentes de IA
+- [ ] Proceso de gestión de vulnerabilidades con canal de notificación (CRA exige reporte de incidentes activamente explotados en plazos ajustados)
+- [ ] Code review humano obligatorio para componentes críticos, independientemente de quién/qué generó el código
+- [ ] Documentación técnica del producto actualizada con el rol de herramientas de IA en el proceso de desarrollo
+```
+
+---
+
+## NIST AI RMF (AI Risk Management Framework)
+
+El **NIST AI Risk Management Framework** (marco de gestión de riesgos de IA del instituto estadounidense NIST) es una referencia voluntaria — no una ley — pero es ampliamente adoptada como estándar de facto por organizaciones que necesitan demostrar diligencia debida en el uso de IA, incluidas empresas europeas que operan también en EE. UU.
+
+El framework se organiza en cuatro funciones: **Govern** (gobernanza y políticas), **Map** (identificar el contexto y los riesgos), **Measure** (medir el impacto y los riesgos identificados) y **Manage** (mitigar y responder). Para un equipo de desarrollo que usa agentes de código, la relevancia práctica está en:
+
+- **Govern**: tener una política explícita de qué agentes están aprobados y para qué tareas
+- **Map**: identificar en qué partes del código el uso de IA introduce mayor riesgo (seguridad, sesgo, cumplimiento)
+- **Measure**: aplicar controles medibles como los del checklist CRA anterior
+- **Manage**: tener un proceso de respuesta si un componente generado por IA falla en producción
+
+No sustituye al CRA ni al AI Act, pero es un marco útil para estructurar internamente cómo tu organización documenta y gestiona el uso de IA en desarrollo, especialmente si operas en varios mercados regulatorios a la vez.
 
 ---
 

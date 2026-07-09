@@ -219,3 +219,7 @@ El refactoring tomó 4 horas. Los 15 tests de integración del estado actual pas
 | Las exclusiones evitaron scope creep | No emails, no POS | No WebSocket, no modificar pedidos | No cambiar API pública |
 | La verificación encontró gaps | Tests de alertas faltaban | Test de no-regresión en pagos | Cobertura de edge cases de tokens |
 | El ROI de SDD vs. no SDD | 4 días vs. estimado de 2 semanas de retrabajo | Cero regresiones vs. alto riesgo | Refactoring con confianza vs. parálisis |
+
+---
+
+[← Anterior: SDD aplicado a diferentes contextos](06-sdd-en-contexto.md) | [Siguiente: Implementaciones concretas de SDD →](08-herramientas-sdd.md)

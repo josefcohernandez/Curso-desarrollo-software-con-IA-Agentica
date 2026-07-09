@@ -4,9 +4,9 @@
 
 Aprender a leer código con ojos de detective, no de espectador. La revisión de código generado por IA requiere un enfoque diferente al code review tradicional: el código compila, los tests pasan, se lee bien... pero puede esconder regresiones silenciosas, abstracciones innecesarias y deuda técnica que nadie cuestiona porque "el agente lo generó y funciona".
 
-En este módulo desarrollarás un método sistemático para revisar PRs generados por IA, aprenderás a identificar las red flags más comunes y practicarás con ejercicios que simulan los errores reales que cometen los agentes de código.
+En este módulo desarrollarás un método sistemático para revisar PRs generados por IA, aprenderás a identificar las red flags más comunes, entenderás dónde encajan los revisores automatizados por agentes (CodeRabbit, Greptile, self-review) en tu pipeline, y practicarás con ejercicios que simulan los errores reales que cometen los agentes de código.
 
-**Tiempo estimado: 2 horas**
+**Tiempo estimado: 2 horas 15 minutos**
 
 ---
 
@@ -19,6 +19,7 @@ Al completar este módulo serás capaz de:
 3. **Identificar** las 8 red flags más comunes del código generado por agentes
 4. **Usar** el método de lectura en 3 pasadas para evaluar diffs de forma eficiente
 5. **Detectar** formas de deuda técnica silenciosa introducida por IA y aplicar estrategias para combatirla
+6. **Situar** los revisores de código automatizados por agentes (CodeRabbit, Greptile, self-review) como una capa adicional al pipeline de revisión, y distinguir cuándo confiar en ellos y cuándo no
 
 ---
 
@@ -33,6 +34,7 @@ Al completar este módulo serás capaz de:
 | 3 | [03-red-flags-codigo-ia.md](teoria/03-red-flags-codigo-ia.md) | 8 señales de alerta específicas del código generado por agentes | 15 min |
 | 4 | [04-patrones-diff-review.md](teoria/04-patrones-diff-review.md) | Método de lectura en 3 pasadas y herramientas de revisión | 10 min |
 | 5 | [05-deuda-tecnica-silenciosa.md](teoria/05-deuda-tecnica-silenciosa.md) | Código que funciona hoy pero acumula problemas para mañana | 10 min |
+| 6 | [06-revisores-automatizados.md](teoria/06-revisores-automatizados.md) | Revisores de código automatizados por agentes (CodeRabbit, Greptile, self-review): capa adicional, no sustituto | 15 min |
 
 ### Ejercicios Prácticos
 
@@ -61,12 +63,13 @@ Al completar este módulo serás capaz de:
 - **Lectura en 3 pasadas**: método sistemático de scope → lógica → calidad
 - **Deuda técnica silenciosa**: problemas acumulados que nadie cuestiona porque "el agente lo generó y funciona"
 - **Test del diff**: si el diff toca archivos que no mencionaste, investiga por qué
+- **Revisor automatizado**: herramienta de IA (CodeRabbit, Greptile, self-review de Copilot/Claude) que audita PRs automáticamente antes de la revisión humana — una capa adicional, nunca un sustituto de la revisión humana
 
 ---
 
 ## Flujo de trabajo recomendado
 
-1. **Lee la teoría en orden**: cada archivo construye sobre el anterior, desde los fundamentos hasta las técnicas avanzadas (01 → 05)
+1. **Lee la teoría en orden**: cada archivo construye sobre el anterior, desde los fundamentos hasta las técnicas avanzadas (01 → 06)
 2. **Haz una pausa y revisa un PR reciente** de tu propio trabajo con IA
 3. **Completa los ejercicios en orden**: cada ejercicio simula escenarios reales de revisión
 4. **Crea tu propio checklist personalizado** para tu stack

@@ -152,4 +152,4 @@ Si no puedes responder "sí, sí, comportamiento" — el PR necesita trabajo.
 
 ---
 
-[← Anterior: Patrones de diff review](04-patrones-diff-review.md) | [Volver al índice del módulo](../README.md)
+[← Anterior: Patrones de diff review](04-patrones-diff-review.md) | [Volver al índice del módulo](../README.md) | [Siguiente: Revisores automatizados por agentes →](06-revisores-automatizados.md)

@@ -49,15 +49,15 @@ El curso está organizado en **5 bloques progresivos** con **14 módulos** + pro
 |--------|--------|--------|-------------|
 | A1 | Prompting Efectivo para Agentes de Código | 2h | Anatomía de un buen prompt, patrones por tipo de tarea, cookbook, ejercicios comparativos |
 | A2 | Limitaciones, Fallos y Pensamiento Crítico | 2.25h | Alucinaciones, regresiones, over-engineering, degradación por contexto, vibe coding, cuándo NO usar IA |
-| A3 | Revisión de Código Generado por IA | 2h | Qué buscar, red flags, patrones de diff review, deuda técnica silenciosa |
+| A3 | Revisión de Código Generado por IA | 2h15m | Qué buscar, red flags, patrones de diff review, deuda técnica silenciosa, revisores automatizados por agentes |
 | A4 | Debugging Sistemático con IA | 2h | Workflow reproducir-aislar-diagnosticar-verificar, logs, cross-stack, post-mortems |
 
 ### Bloque B: Metodologías (Módulos B1-B2)
 
 | Módulo | Título | Tiempo | Descripción |
 |--------|--------|--------|-------------|
-| B1 | Estrategias de Desarrollo con IA Agéntica | 3h | Gherkin/BDD, TDD, Writer/Reviewer, Fan-out, Visual-Driven, PRD, Design Docs, ADR |
-| B2 | SDD — Spec-Driven Development (Monográfico) | 3.5h | Las cuatro fases de SDD: entrevista, especificación, implementación y verificación |
+| B1 | Estrategias de Desarrollo con IA Agéntica | 2.5h | Gherkin/BDD, TDD, Writer/Reviewer, Fan-out, Visual-Driven, PRD, Design Docs, ADR |
+| B2 | SDD — Spec-Driven Development (Monográfico) | 3h45m | Las cuatro fases de SDD: entrevista, especificación, implementación y verificación, más panorama de implementaciones concretas (Spec Kit, Kiro, Tessl, BMAD-METHOD) |
 
 ### Bloque C: Escenarios Reales (Módulos C1-C2)
 
@@ -70,17 +70,17 @@ El curso está organizado en **5 bloques progresivos** con **14 módulos** + pro
 
 | Módulo | Título | Tiempo | Descripción |
 |--------|--------|--------|-------------|
-| D1 | Adopción en Equipos y Métricas | 2h | Fases de adopción, resistencia al cambio, convenciones de equipo, ROI |
-| D2 | Ética, Responsabilidad y Panorama de Herramientas | 2h | IP, privacidad, compliance, comparativa de herramientas, futuro del desarrollo |
+| D1 | Adopción en Equipos y Métricas | 2h | Fases de adopción, resistencia al cambio, convenciones de equipo, ROI, frameworks del sector (DORA, SPACE, DX Core 4) y la AI Productivity Paradox |
+| D2 | Ética, Responsabilidad y Panorama de Herramientas | 2h30m | IP, privacidad, compliance (incluye CRA y NIST AI RMF), comparativa de herramientas, futuro del desarrollo |
 
 ### Bloque E: Nivel Experto (Módulos E1-E4)
 
 | Módulo | Título | Tiempo | Descripción |
 |--------|--------|--------|-------------|
 | E1 | Arquitectura de Software Orientada a IA | 2h | AI-readability, patrones modulares, documentación como contrato, anti-patrones |
-| E2 | Orquestación Multi-Agente y Automatización a Escala | 2.75h | Patrones de coordinación, frameworks (LangGraph, CrewAI), MCP, prompts para CI/CD, evals, memoria de agentes |
+| E2 | Orquestación Multi-Agente y Automatización a Escala | 2.75h | Patrones de coordinación, frameworks (LangGraph, CrewAI), MCP, protocolo A2A y Agentic AI Foundation, prompts para CI/CD, evals, memoria de agentes |
 | E3 | Testing Avanzado y AI Pair Programming | 2h | Property-based testing, mutation testing, visual regression, flow state |
-| E4 | Seguridad, Costes y Optimización | 2.25h | Threat modeling, seguridad agéntica (OWASP Top 10), security review, token budgeting, benchmarking |
+| E4 | Seguridad, Costes y Optimización | 2h | Threat modeling, seguridad agéntica (OWASP Top 10), security review, token budgeting, selección de modelo multi-proveedor, benchmarking |
 
 ### Proyecto Final
 
@@ -156,6 +156,7 @@ Sigue los bloques en orden (A → B → C → D → E → Proyecto). Cada módul
 - **"¿Cómo debuggeo con IA?"** → Módulo A4
 - **"¿Cómo aplico Gherkin/BDD y TDD con IA?"** → Módulo B1
 - **"¿Qué es SDD y cómo se aplica?"** → Módulo B2
+- **"¿Qué herramientas implementan SDD (Spec Kit, Kiro)?"** → Módulo B2 (teoría 08)
 - **"¿Flujos end-to-end en mi día a día?"** → Módulo C1
 - **"¿Cómo adapto el agente a mi stack?"** → Módulo C2
 - **"¿Cómo introduzco IA en mi equipo?"** → Módulo D1
@@ -164,6 +165,7 @@ Sigue los bloques en orden (A → B → C → D → E → Proyecto). Cada módul
 - **"¿Cómo coordino múltiples agentes?"** → Módulo E2
 - **"¿Qué framework de orquestación elijo?"** → Módulo E2 (teoría 06)
 - **"¿Qué es MCP y cómo implementarlo?"** → Módulo E2 (teoría 07)
+- **"¿Qué es A2A y en qué se diferencia de MCP?"** → Módulo E2 (teoría 07)
 - **"¿Cómo evalúo si mis agentes funcionan?"** → Módulo E2 (teoría 08)
 - **"¿Cómo hago testing avanzado con IA?"** → Módulo E3
 - **"¿Cómo gestiono costes y seguridad?"** → Módulo E4
@@ -263,7 +265,8 @@ Curso-desarrollo-software-con-IA-Agentica/
 │   │   ├── 02-que-buscar.md
 │   │   ├── 03-red-flags-codigo-ia.md
 │   │   ├── 04-patrones-diff-review.md
-│   │   └── 05-deuda-tecnica-silenciosa.md
+│   │   ├── 05-deuda-tecnica-silenciosa.md
+│   │   └── 06-revisores-automatizados.md
 │   └── ejercicios/
 │       ├── 01-review-pr-ia.md
 │       ├── 02-encontrar-regresion.md
@@ -310,7 +313,8 @@ Curso-desarrollo-software-con-IA-Agentica/
 │   │   ├── 04-fase-implementacion.md
 │   │   ├── 05-fase-verificacion.md
 │   │   ├── 06-sdd-en-contexto.md
-│   │   └── 07-casos-estudio.md
+│   │   ├── 07-casos-estudio.md
+│   │   └── 08-herramientas-sdd.md
 │   ├── ejercicios/
 │   │   ├── 01-spec-desde-cero.md
 │   │   ├── 02-spec-para-feature-existente.md
@@ -464,6 +468,7 @@ Curso-desarrollo-software-con-IA-Agentica/
 | 1.0 | Abril 2026 | Versión inicial — 12 módulos + proyecto en 4 bloques (A: El Oficio, B: Escenarios, C: Equipo, D: Experto) |
 | 1.1 | Abril 2026 | Reestructuración — nuevo Bloque B (Metodologías: B1 Estrategias + B2 SDD), 14 módulos en 5 bloques. Bloques B→C, C→D, D→E. El curso es ahora la fuente autoritativa de metodologías de desarrollo con IA |
 | 1.2 | Abril 2026 | Ampliación — 7 nuevos ficheros de teoría: context engineering (A1), vibe coding (A2), frameworks de orquestación (E2), MCP en profundidad (E2), evaluación de agentes (E2), memoria de agentes (E2), seguridad agéntica OWASP (E4). Actualización de token budgeting con prompt caching avanzado (E4) y futuro del desarrollo con computer use y agentic RAG (D2) |
+| 1.3 | Julio 2026 | Ampliación — 2 nuevos ficheros de teoría: revisores de código automatizados por agentes (A3), implementaciones concretas de SDD — Spec Kit, Kiro, Tessl, BMAD-METHOD (B2). Actualización de compliance con Cyber Resilience Act y NIST AI RMF (D2), protocolo A2A y Agentic AI Foundation en MCP (E2), frameworks del sector y AI Productivity Paradox en métricas/ROI (D1), generalización multi-proveedor de la selección de modelo (E4), y patrón de agentes cloud asíncronos en el día típico (C1) |
 
 ---
 

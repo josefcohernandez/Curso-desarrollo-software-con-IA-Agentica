@@ -17,8 +17,8 @@ Al completar este módulo serás capaz de:
 1. **Planificar** una adopción de IA en 4 fases (exploración, estandarización, integración, optimización) con actividades y métricas para cada una
 2. **Identificar** los 5 tipos de resistencia al cambio y aplicar estrategias empáticas para abordar cada uno
 3. **Diseñar** un archivo de instrucciones del repositorio (`AGENTS.md`, `CLAUDE.md` o equivalente) con convenciones compartidas de estilo, permisos, revisión y límites
-4. **Seleccionar** métricas de productividad significativas y descartar métricas vanidosas que no aportan información útil
-5. **Calcular** el ROI de la adopción de IA y presentar un caso de negocio a management con datos reales
+4. **Seleccionar** métricas de productividad significativas, descartar métricas vanidosas y situarlas en el contexto de frameworks del sector (DORA, SPACE, DX Core 4)
+5. **Calcular** el ROI de la adopción de IA, evitando el sesgo de la "AI Productivity Paradox", y presentar un caso de negocio a management con datos reales
 6. **Facilitar** un piloto de adopción con early adopters y escalar gradualmente al resto del equipo
 
 ---
@@ -32,8 +32,8 @@ Al completar este módulo serás capaz de:
 | 1 | [01-fases-adopcion.md](teoria/01-fases-adopcion.md) | Las 4 fases de adopción: exploración, estandarización, integración, optimización | 15 min |
 | 2 | [02-resistencia-cambio.md](teoria/02-resistencia-cambio.md) | 5 tipos de resistencia al cambio y cómo abordar cada uno con empatía | 15 min |
 | 3 | [03-convenciones-equipo.md](teoria/03-convenciones-equipo.md) | Convenciones de equipo para IA: `AGENTS.md` / `CLAUDE.md`, skills, permisos, commits y límites | 20 min |
-| 4 | [04-metricas-productividad.md](teoria/04-metricas-productividad.md) | Métricas de productividad: qué medir, qué NO medir y las trampas de cada métrica | 15 min |
-| 5 | [05-roi-management.md](teoria/05-roi-management.md) | ROI para management: framework de cálculo, datos orientativos y plan de presentación | 15 min |
+| 4 | [04-metricas-productividad.md](teoria/04-metricas-productividad.md) | Métricas de productividad: qué medir, qué NO medir, frameworks del sector (DORA, SPACE, DX Core 4) y la AI Productivity Paradox | 20 min |
+| 5 | [05-roi-management.md](teoria/05-roi-management.md) | ROI para management: framework de cálculo, datos orientativos, riesgo de ROI inflado y plan de presentación | 15 min |
 
 ### Ejercicios Prácticos
 
@@ -62,6 +62,8 @@ Al completar este módulo serás capaz de:
 - **Archivo de instrucciones de equipo**: el documento central que alinea al equipo en convenciones, permisos y restricciones para el agente
 - **Métricas significativas**: cycle time, PRs por semana, tasa de bugs post-merge, satisfacción del equipo
 - **Métricas vanidosas**: líneas de código generadas, porcentaje de "código IA", tiempo usando la herramienta
+- **Frameworks del sector**: DORA (deployment frequency, lead time, change failure rate, time to restore), SPACE (multidimensional, nunca una sola métrica) y DX Core 4 como referencias externas para contrastar las métricas propias
+- **AI Productivity Paradox**: más código generado y más PRs no implica más valor entregado; el code churn se duplica en 2026 (DORA) y los agentes escriben ~180% más código pero solo ~30% más software llega a producción (MIT/Forbes)
 - **ROI framework**: Ahorro = (Horas ahorradas/semana x Coste/hora x Semanas/año) - Coste herramienta/año
 - **Piloto antes de rollout**: siempre empezar con 3-5 desarrolladores durante 2-4 semanas antes de escalar
 

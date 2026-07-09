@@ -21,6 +21,7 @@ Al completar este módulo serás capaz de:
 5. **Definir** estrategias de recuperación ante fallos en ejecución desatendida: logging, checkpoints y alertas
 6. **Seleccionar** el framework de orquestación adecuado (LangGraph, CrewAI, OpenAI Agents SDK, Google ADK, Semantic Kernel, AutoGen) según el ecosistema y la complejidad del flujo
 7. **Implementar** un servidor MCP con FastMCP que exponga tools y resources a cualquier cliente compatible (Claude Code, Cursor, Copilot)
+8. **Distinguir** MCP (agente↔herramienta) de A2A (agente↔agente) y situar ambos protocolos dentro de la gobernanza de la Agentic AI Foundation (AAIF)
 
 ---
 
@@ -36,7 +37,7 @@ Al completar este módulo serás capaz de:
 | 4 | [04-testing-de-prompts.md](teoria/04-testing-de-prompts.md) | Testing de prompts como artefactos de producción: 4 técnicas y framework de evaluación | 10 min |
 | 5 | [05-gestion-fallos-desatendidos.md](teoria/05-gestion-fallos-desatendidos.md) | Gestión de fallos en ejecución desatendida: tipos, recuperación y alertas | 10 min |
 | 6 | [06-frameworks-orquestacion.md](teoria/06-frameworks-orquestacion.md) | Frameworks de producción: LangGraph, CrewAI, OpenAI Agents SDK, Google ADK, Semantic Kernel, AutoGen | 15 min |
-| 7 | [07-mcp-protocolo.md](teoria/07-mcp-protocolo.md) | MCP: arquitectura host/client/server, las 3 primitivas (tools, resources, prompts), FastMCP, seguridad y portabilidad | 20 min |
+| 7 | [07-mcp-protocolo.md](teoria/07-mcp-protocolo.md) | MCP: arquitectura host/client/server, las 3 primitivas (tools, resources, prompts), FastMCP, seguridad y portabilidad. A2A: comunicación agente-agente y la Agentic AI Foundation | 25 min |
 | 8 | [08-evaluacion-agentes.md](teoria/08-evaluacion-agentes.md) | Evaluación de agentes (evals): métricas, LLM-as-judge, framework de 3 niveles, SWE-bench y diseño de evals propias | 20 min |
 | 9 | [09-memoria-agentes.md](teoria/09-memoria-agentes.md) | Memoria de agentes: 4 tipos, mecanismos en coding agents, frameworks (Mem0, Letta, LangGraph Checkpointing), patrones y memoria en orquestación multi-agente | 15 min |
 
@@ -71,6 +72,7 @@ Al completar este módulo serás capaz de:
 - **Frameworks de orquestación**: LangGraph (grafos de estado), CrewAI (roles declarativos), OpenAI Agents SDK (handoffs + guardrails), Google ADK (jerárquico nativo), Semantic Kernel (planners enterprise), AutoGen (conversación multi-agente)
 - **Criterio de selección**: ecosistema, complejidad del flujo, necesidad de ciclos y estado persistente
 - **MCP (Model Context Protocol)**: protocolo abierto para integración de herramientas; primitivas tools/resources/prompts; servidor con FastMCP; portabilidad entre clientes; seguridad (tool poisoning, supply chain, SSRF)
+- **A2A (Agent2Agent)**: protocolo creado por Google (2025), donado a la Linux Foundation, v1.0 en 2026 con 150+ organizaciones en producción (AWS, Microsoft, Salesforce, SAP, IBM, ServiceNow); Agent Cards firmadas para descubrir capacidades de otros agentes; complementa a MCP bajo la gobernanza de la Agentic AI Foundation (AAIF)
 - **Evaluación de agentes (evals)**: task completion rate, tool use accuracy, context retention; LLM-as-judge; framework de 3 niveles (unit, integration, end-to-end); SWE-bench como benchmark estándar
 - **Memoria de agentes**: in-context, externa persistente, episódica, semántica; archivo de instrucciones del repositorio (`AGENTS.md`, `CLAUDE.md`, etc.) como memoria explícita; auto-memory como implementación específica de herramienta; frameworks Mem0, Letta, LangGraph Checkpointing; patrones write-through, summarize-and-store, retrieve-and-augment, forget-and-prune; memoria jerárquica en multi-agente
 

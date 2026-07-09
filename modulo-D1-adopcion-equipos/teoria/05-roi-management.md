@@ -36,9 +36,15 @@ Cálculo:
 
 Incluso con estimaciones conservadoras, el ROI suele ser muy favorable porque el coste de las herramientas es bajo comparado con el coste del tiempo de los desarrolladores.
 
+### Advertencia: el ROI aparente puede estar inflado por la "AI Productivity Paradox"
+
+Antes de presentar cualquier cifra de ROI, ten en cuenta lo que el [capítulo de métricas de productividad](04-metricas-productividad.md) desarrolla con detalle: el informe DORA "ROI of AI-Assisted Software Development" (2026) documenta que el code churn — código reescrito o revertido poco después de crearse — se duplica en equipos con adopción intensiva de IA. Si tu cálculo de "horas ahorradas" se basa en tiempo de primer commit en lugar de tiempo hasta que el código queda estable en producción, corres el riesgo de contar como ahorro un trabajo que en realidad se va a rehacer. La mitigación es simple: mide el ahorro sobre trabajo que ha sobrevivido al menos 2-4 semanas sin necesitar reescritura significativa, no sobre la primera entrega.
+
 ---
 
 ## Datos Orientativos
+
+Además de los datos orientativos de este capítulo, contrasta siempre tus cifras con los frameworks de referencia del sector: el propio informe DORA de ROI, y frameworks de medición más amplios como SPACE o DX Core 4 (ver [04-metricas-productividad.md](04-metricas-productividad.md)). Presentar un ROI que solo se apoya en datos propios, sin contraste con benchmarks externos, es menos persuasivo ante management que uno que sitúa tus resultados en el contexto del sector.
 
 Estos datos varían enormemente por contexto, equipo y tipo de proyecto. Úsalos como punto de partida, no como verdad absoluta.
 
@@ -136,6 +142,7 @@ Usar la fórmula del framework con los datos del piloto en lugar de estimaciones
 | Ignorar los costes ocultos (formación, curva de aprendizaje) | El ROI real será menor de lo presentado |
 | No mencionar riesgos | Parece una venta, no una propuesta seria |
 | Presentación de 45 minutos | Management pierde interés después de 15 |
+| Medir ahorro sobre la primera entrega, ignorando code churn | El ROI parece mayor de lo real si parte del código "ahorrado" se reescribe después (AI Productivity Paradox) |
 
 ---
 
