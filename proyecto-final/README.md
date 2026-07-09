@@ -50,11 +50,11 @@ No es un examen de programación. Se evalúa **cómo trabajas con IA**, no solo 
 
 ## Relación con el Proyecto del Curso de Claude Code
 
-Si también estás haciendo el [Proyecto Final del Curso de Claude Code (M16)](../../Curso-desarrollo-software-con-Claude-Code/modulo-16-proyecto-final/enunciado/README.md), puedes combinar ambos proyectos:
+Si también estás haciendo el [Proyecto Final del Curso de Claude Code (M17)](../../Curso-desarrollo-software-con-Claude-Code/modulo-17-proyecto-final/enunciado/README.md), puedes combinar ambos proyectos:
 
-- Usa el proyecto de M16 (herramienta CLI de análisis de calidad) como base
+- Usa el proyecto de M17 (herramienta CLI de análisis de calidad) como base
 - Aplica las técnicas de este curso durante su desarrollo
-- La retrospectiva del Día 3 de este proyecto se convierte en la documentación de proceso de M16
+- La retrospectiva del Día 3 de este proyecto se convierte en la documentación de proceso de M17
 
 ---
 
