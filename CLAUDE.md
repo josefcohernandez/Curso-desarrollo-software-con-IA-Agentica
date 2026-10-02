@@ -24,9 +24,11 @@ agentes de código (14 módulos A1-E4 y proyecto final; solo Markdown). Es un su
   teoría y ejercicios, y las duraciones de sus tablas deben coincidir con las de cada módulo.
 - Los enlaces `../` desde la raíz (p. ej. `../CURSO_IA_AGENTICA.md`) apuntan al monorepo padre y
   no se comprueban aquí.
-- La versión del curso (v1.3 en el README) es editorial; las releases son `vX.Y.Z` y las crea la
-  CI.
 
 ## Decisiones vigentes
 
 <!-- Una línea por ADR: - [0001 · Título](docs/adr/0001-titulo.md): resumen en una frase. -->
+
+- **Versiones = edición del curso.** Las releases `vX.Y.Z` (las crea la CI con `flujo publicar`)
+  siguen la edición: mayor.menor = edición del README (ahora la 1.3), patch = correcciones sin
+  edición nueva. La primera release será `v1.3.0`; una edición nueva sube la menor (o la mayor).
